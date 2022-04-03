@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		VERSION = '1.0.0'
-		DOCKERHUB_CREDENTIALS = credentials('docker-jrandleman-credentials')
+		DOCKERHUB_CREDENTIALS = credentials('hello_mate!')
 	}
 	stages {
 		stage('Build') {
