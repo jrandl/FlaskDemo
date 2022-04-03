@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		VERSION = '1.0.0'
-		DOCKERHUB_CREDENTIALS = credentials('docker-jrandleman-credentials')
+		DOCKERHUB_CREDENTIALS = credentials('docker-jrandl-credentials')
 	}
 	stages {
 		stage('Build') {
@@ -29,8 +29,8 @@ pipeline {
                 {
                         steps {
 				sh 'sudo chmod 666 /var/run/docker.sock'
-                                sh 'docker build -t jrandleman/flaskdemo:$VERSION .'
-                                sh 'docker build -t jrandleman/flaskdemo:latest .'
+                                sh 'docker build -t jrandl/flaskdemo:$VERSION .'
+                                sh 'docker build -t jrandl/flaskdemo:latest .'
                         }
                 }
 
@@ -44,8 +44,8 @@ pipeline {
 		stage('Push Image to Dockerhub') {
 
 			steps {
-				sh 'docker push jrandleman/flaskdemo:$VERSION'
-				sh 'docker push jrandleman/flaskdemo:latest'
+				sh 'docker push jrandl/flaskdemo:$VERSION'
+				sh 'docker push jrandl/flaskdemo:latest'
 			}
 		}
 
