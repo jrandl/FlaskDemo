@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		VERSION = '1.0.0'
-		DOCKERHUB_CREDENTIALS = credentials('hello_mate!')
+		DOCKERHUB_CREDENTIALS = credentials('hello')
 	}
 	stages {
 		stage('Build') {
